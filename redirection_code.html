@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang=ko>
+
+<head>
+	<meta charset=utf-8>
+	<title>곧 리다이렉트 됩니다...</title>
+</head>
+
+	<style type="text/css">
+		body {
+			background-image: url('a.jpeg');
+			background-color: black;
+			color:white;
+		}
+
+		a{
+			background-color: white;
+		}
+
+		#container {
+			display:table;
+			width:100%;
+			height:100%;
+			text-align: center;
+		}
+		#container span {
+			display:table-cell;
+			vertical-align:middle;
+		}
+	</style>
+
+	<script type="text/javascript">
+		var count;
+		var counter; 
+
+		function timer(secs) {
+		  count=parseInt(secs)-1;
+		  counter=setInterval("tick()", 1000);  //every sec
+		}
+
+		function tick() {
+			var secs = count;
+			if(secs > 0) {
+				count--;
+			}
+			else {
+		    	clearInterval(counter);
+		    	window.location.replace("http://a");
+		    	return;
+		  	}
+
+			document.getElementById("countdown").innerHTML= secs + "초 후에 리다이렉트 됩니다."; 
+		}
+
+		timer(5);
+	</script>
+
+	<body>
+		<div id="container">
+			<span>
+				<h3>JayCho(할리)님은 더 이상<br>"infosecreload.today"라는 도메인을 사용하지 않습니다.</h3>
+				<img src="a.jpg" alt="a">
+				<h2><a href="http://a">hackernextdoor.club</a></h2>
+				<h2 id="countdown">5초 후에 리다이렉트 됩니다.</h2>
+			</span> 
+		</div>
+	</body>
+</html>
